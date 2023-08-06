@@ -1,0 +1,11 @@
+.container {
+  max-width: 62.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
