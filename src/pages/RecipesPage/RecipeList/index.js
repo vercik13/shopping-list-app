@@ -20,13 +20,17 @@ export const RecipeList = () => {
   `;
 
   const itemsElm = element.querySelector(".shoplist__items");
-  element.append(getRecipesItems());
-
   getRecipesItems().then((response) => {
     const { data } = response;
-    console.log(data);
-
-    //element.replaceWith(RecipeList(data));
+    element.append(
+      ...data.map((item) =>
+        RecipeItem({
+          name: item.name,
+          ingrediens: item.ingrediens,
+          progress: item.progress,
+        })
+      )
+    );
   });
 
   return element;
